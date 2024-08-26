@@ -21,9 +21,6 @@ public class Singleton {
     public static Singleton getInstance(int a, int b) {
         if(instance==null){
             instance=new Singleton(a,b);
-        }else{
-            instance.a=a;
-            instance.b=b;
         }
         return instance;
     }
