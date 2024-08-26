@@ -10,12 +10,27 @@ public class Main {
 //      System.out.println(h.toString());
       //adassert 1==2;
 
-     Singleton s1 = Singleton.getInstance(2,5);
-
-        Singleton s2 = Singleton.getInstance(7,5);
+        Singleton s1 = Singleton.getInstance("foo");
+        Singleton s2 = Singleton.getInstance("bar");
         System.out.println(s1.toString());
         System.out.println(s2.toString());
 
 
+    }
+
+    static class ThreadFoo implements Runnable {
+        @Override
+        public void run() {
+            Singleton singleton = Singleton.getInstance("FOO");
+            System.out.println(singleton.toString());
+        }
+    }
+
+    static class ThreadBar implements Runnable {
+        @Override
+        public void run() {
+            Singleton singleton = Singleton.getInstance("BAR");
+            System.out.println(singleton.toString());
+        }
     }
 }

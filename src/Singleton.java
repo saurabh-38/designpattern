@@ -1,26 +1,23 @@
 public class Singleton {
     //
 
-    private int a;
-    private int b;
+    private String value;
     private static Singleton instance;
 
-    private  Singleton(int a,int b){
-        this.a=a;
-        this.b=b;
+    private  Singleton(String value){
+        this.value=value;
     }
 
     @Override
     public String toString() {
         return "Singleton{" +
-                "a=" + a +
-                ", b=" + b +
+                "value='" + value + '\'' +
                 '}';
     }
 
-    public static Singleton getInstance(int a, int b) {
+    public static Singleton getInstance(String value) {
         if(instance==null){
-            instance=new Singleton(a,b);
+            instance=new Singleton(value);
         }
         return instance;
     }
