@@ -16,7 +16,7 @@ public class Singleton {
     }
 
     public static Singleton getInstance(String value) {
-        if(instance==null){
+        if(instance==null){ //this is race condition in out singleton desgin pattern
             instance=new Singleton(value);
         }
         return instance;

@@ -1,19 +1,14 @@
 public class Main {
     public static void main(String[] args) {
 
-        //System.out.println("Hello world!");
-//
-//        House h = new House.Builder()
-//                .rent(5)
-//                .address("delhi")
-//                .build();
-//      System.out.println(h.toString());
-      //adassert 1==2;
-
-        Singleton s1 = Singleton.getInstance("foo");
-        Singleton s2 = Singleton.getInstance("bar");
+        Thread s1= new Thread(new ThreadFoo());
+        Thread s2 = new Thread(new ThreadBar());
+        s1.start();
+        s2.start();
         System.out.println(s1.toString());
         System.out.println(s2.toString());
+        //create two thread and got two different output
+        //
 
 
     }
