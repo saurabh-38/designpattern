@@ -15,9 +15,12 @@ public class Singleton {
                 '}';
     }
 
-    public static synchronized Singleton getInstance(String value) {
-        if(instance==null){ //this is race condition in out singleton desgin pattern
-            instance=new Singleton(value);
+    public static  Singleton getInstance(String value) {
+        if(instance!=null)return instance;
+        synchronized (Singleton.class){
+            if (instance == null) { //this is race condition in out singleton desgin patter
+                instance = new Singleton(value);
+            }
         }
         return instance;
     }
